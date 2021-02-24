@@ -1,0 +1,30 @@
+p{
+    padding:30px;
+    color: red;
+}
+button{
+    margin: 10px;
+}
+.main-header{
+    background-color: rgb(141, 19, 255);
+    color: white;
+    text-align: center;
+  }
+ 
+  .fileClass{
+    // width: 0px;
+	// height: 0px;
+    opacity: 0;
+    z-index: -1;
+  }
+  .inputfile{
+      margin-left: -90px;
+  }
+
+  button{
+    float:right;
+  }
+.card{
+  z-index: 2;
+  box-shadow: 2px 2px 10px 10px #c5c5c5;
+}

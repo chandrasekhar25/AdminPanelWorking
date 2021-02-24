@@ -1,0 +1,46 @@
+<div  *ngIf = "logInIndicator" class="main-header">
+    <ul>
+        <li class="dropdown">
+            <a  *ngFor ='let user of userType' (click)='onSelectPage()'  class="dropbtn">{{user}}</a>
+          </li>
+    </ul>
+
+</div>
+<div class="heading"  *ngIf = "logInIndicator" >
+    <p>Hi, {{adminName}} </p>
+</div>
+<div *ngIf = "!logInIndicator" class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 card">
+         <h4 *ngIf = "!logInIndicator" class="card-body">Please LogIn  <button class="btn btn-info" routerLink = ''>Back to LogIn</button></h4>
+        </div>
+        <div class="col-sm-3"></div>
+     </div>
+</div>
+
+
+<!-- <p *ngIf = "errorMessage">{{logInMessage}}</p> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

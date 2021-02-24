@@ -1,0 +1,104 @@
+<div  *ngIf = "logInIndicator" class="container-fluid main-header">
+    <div class="row">
+        <div class="col-sm-10">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="col-sm-2">
+        
+        </div>
+    </div>
+  </div><br><br>
+<div  *ngIf = "logInIndicator" class="container">
+    <div class="row">
+      <div class="col-sm-1"></div>
+        <div class="col-sm-10 card">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="card-body">
+                <div class="form-group">
+                    <label for="userName">Match Id</label>
+                    <input type="text" 
+                    id="userName" 
+                    class="form-control"
+                    name="MatchId"
+                    required
+                    ngModel>
+                </div>
+                    <div class="form-group">
+                      <label for="userName">PlayerId</label>
+                      <input type="text" 
+                      id="userName" 
+                      class="form-control"
+                      name="PlayerId"
+                      required
+                      ngModel>
+                  </div>
+                <div class="form-group">
+                    <label for="userName">Player Name</label>
+                    <input type="text" 
+                    id="userName" 
+                    class="form-control"
+                    name="PlayerName"
+                    required
+                    ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="userName">Player Rank</label>
+                    <input type="text" 
+                    id="userName" 
+                    class="form-control"
+                    name="PlayerRank"
+                    required
+                    ngModel>
+                </div>
+              <div class="form-group">
+                  <label for="userName">Number Of Kills</label>
+                  <input type="text" 
+                  id="userName" 
+                  class="form-control"
+                  name="NumberOfKills"
+                  required
+                  ngModel>
+              </div>
+              <div class="form-group">
+                <label for="userName">MVP (Most valuable player)</label>
+                <input type="text" 
+                id="userName" 
+                class="form-control"
+                name="MVP"
+                required
+                ngModel>
+            </div>
+            <div class="form-group">
+                <label for="userName">Wins</label>
+                <input type="text" 
+                id="userName" 
+                class="form-control"
+                name="Wins"
+                required
+                ngModel>
+            </div>
+            <div class="form-group">
+                <label for="userName">Matches</label>
+                <input type="text" 
+                id="userName" 
+                class="form-control"
+                name="Matches"
+                required
+                ngModel>
+            </div>
+                <button type="submit" class="btn btn-primary">Post Results</button>
+                <br>
+                <p>{{message}}</p>
+            </form>
+            <button type="button" routerLink = '/SelectGame' class="btn btn-success">Select Game</button>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div *ngIf = "!logInIndicator" class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 card">
+             <h4 *ngIf = "!logInIndicator" class="card-body">Please LogIn  <button class="btn btn-info" routerLink = ''>Back to LogIn</button></h4>
+            </div>
+            <div class="col-sm-3"></div>
+         </div>
+    </div> 

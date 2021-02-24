@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-header{
+    background-color: rgb(141, 19, 255);
+    color: white;
+    text-align: center;
+  }
+  .name{
+      padding: 10px;
+  }
+  .btn-primary{
+     padding: 5px;
+     margin-top: 120px;
+     position: absolute;
+  }
+  .btn-info{
+      float: right;
+      padding: 3px;
+      margin: 10px 5px 0px 0;
+  }
+  h4{
+       vertical-align: middle;
+  }
+  .upload-Section{
+      margin-left: 130px;
+      margin-top: -30px;
+      position: relative;
+  }
+  .btn-success{
+      padding: 8px;
+  }
+  p{
+      padding: 15px;
+  }

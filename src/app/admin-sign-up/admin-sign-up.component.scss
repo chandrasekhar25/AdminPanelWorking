@@ -1,0 +1,59 @@
+.main-header{
+  background-color: rgb(141, 19, 255);
+}
+.col-xm-8{
+  width: 60%;
+}
+.col-xm-2{
+  width: 20%;
+}
+h3{
+  color: rgb(255, 255, 255);
+  font-size:5vw;
+  padding-left: 20px;
+}
+.label{
+    padding: 10px;
+}
+.option{
+  padding: 20px;
+  border: red 1px;
+}
+
+select{
+   padding: 3px;
+   border-radius: 5px;
+   margin-top: 15px;
+}
+.dropdown{
+  border: 2px solid rgb(141, 19, 255);
+}
+.dropdown-item{
+  color: rgb(0, 0, 0);
+}
+.signInBtn{
+  background-color: rgb(141, 19, 255);
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  color: white;
+ border-color: white;
+ margin-bottom: 5px;
+}
+p{
+    padding-top: 20px;
+}
+input{
+ border-color: rgb(141, 19, 255);
+}
+label{
+  color: red;
+}
+ng-valid{
+  border-color: red;
+}
+@media screen and (min-width: 700px) {
+  h3 {
+    font-size: 2vw;
+  }
+}

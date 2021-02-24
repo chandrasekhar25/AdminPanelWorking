@@ -1,0 +1,43 @@
+<div *ngIf = "logInIndicator" class="container-fluid main-header">
+    <div class="row">
+        <div class="col-sm-10">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="col-sm-2">
+        
+        </div>
+    </div>
+  </div><br><br>
+<div  *ngIf = "logInIndicator" class="row">
+    <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+          <form (ngSubmit)="onSubmit(form)"  #form="ngForm" >  
+            <div class="form-group">
+                <label for="userName" class="name">Matche Id</label>
+                <input type="text" 
+                id="userName" 
+                class="form-control"
+                name="MatcheId"
+                required
+                ngModel>
+            </div><br>
+              <button type="submit" class="btn btn-primary">Post Results</button>
+          </form>
+          <p>{{errMes}}</p>
+      </div>
+      <div class="col-sm-1"></div>
+  </div><br>
+  <div *ngIf = "logInIndicator" class="container upload-Section">
+    <input type="file" accept="image/*" (change) = "onSelectedFile($event)">
+    <button type="button" (click) = "onUpload()" class="btn btn-success">Upload Photo</button>  
+    <p>{{imageUrlFromUpload}}</p>
+  </div>
+  <div *ngIf = "!logInIndicator" class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 card">
+         <h4 *ngIf = "!logInIndicator" class="card-body">Please LogIn  <button class="btn btn-info" routerLink = ''>Back to LogIn</button></h4>
+        </div>
+        <div class="col-sm-3"></div>
+     </div>
+</div>

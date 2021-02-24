@@ -1,0 +1,65 @@
+<div *ngIf = "logInIndicator" class="container-fluid main-header">
+    <div class="row">
+        <div class="col-sm-10">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div><br>
+<div  *ngIf = "logInIndicator" class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 card">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="card-body">
+                    <div class="form-group">
+                        <label for="userName">TournamentId</label>
+                        <input type="name"  
+                        id="userName" 
+                        class="form-control"
+                        name="TournamentId"
+                        ngModel
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Player1">Player Email</label>
+                        <input type="name"  
+                        id="Player1" 
+                        class="form-control"
+                        name="Player1"
+                        ngModel
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="player2">Round</label>
+                        <input type="name"  
+                        id="Player2" 
+                        class="form-control"
+                        name="round"
+                        ngModel
+                        required>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="file" class="fileClass">Upload Image</label>
+                        <input type="file" name="file" id="file" class="inputfile"   required
+                        ngModel />
+                    </div><br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p>{{message}}</p>
+                <!-- <p>{{errorMessage}}</p> -->
+            </form>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+    <div *ngIf = "!logInIndicator" class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 card">
+             <h4 *ngIf = "!logInIndicator" class="card-body">Please LogIn  <button class="btn btn-info" routerLink = ''>Back to LogIn</button></h4>
+            </div>
+            <div class="col-sm-3"></div>
+         </div>
+    </div>
+
+

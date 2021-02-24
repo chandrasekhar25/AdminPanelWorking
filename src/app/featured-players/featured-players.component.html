@@ -1,0 +1,95 @@
+<div *ngIf = "logInIndicator" class="container-fluid main-header">
+  <div class="row">
+      <div class="col-sm-10">
+          <h1>{{title}}</h1>
+      </div>
+      <div class="col-sm-2">
+      
+      </div>
+  </div>
+</div><br><br>
+<div   *ngIf = "logInIndicator"  class="container">
+    <div class="row">
+      <div class="col-sm-1"></div>
+        <div class="col-sm-10 card">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="card-body">
+               
+                    <div class="form-group dropdown">
+                      <label for="userName">tournamentId</label>
+                      <select  
+                      id="userName" 
+                      class="form-control"
+                      name="tournamentId"
+                      ngModel
+                      required
+                      email>
+                      <option *ngFor="let ids of shortCodes" [value]="ids">
+                        {{ids}}
+                      </option>
+                      </select>
+                  </div>
+                <div class="form-group">
+                    <label for="userName">entryCount</label>
+                    <input type="name" 
+                    id="userName" 
+                    class="form-control"
+                    name="entryCount"
+                    required
+                    ngModel
+                    minlength ="6"
+                    password>
+                </div>
+                <button type="submit" class="btn btn-primary">Get List</button>
+            </form>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div><br><br>
+<h3>{{errorMessage}}</h3>
+<div class="container card" *ngIf = "dataExists">   
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <table class="table card-body">
+        <thead>
+          <tr>
+            <th>UserName</th>
+            <th>Win%</th>
+            <th>Rank</th>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Ties</th>
+            <th>TotalMatches</th>
+            <th>TotalPoints</th>
+          </tr>
+        </thead>
+          <tbody *ngFor = 'let x of data; let i = index'>
+          <input type = "checkbox" class="form-check-input" id="exampleCheck1" (click) = "onSelectUser(i)">
+            <tr (click) = "onSelect()" class="onHover"> 
+              <td>{{x.userName}}</td>
+              <td>{{x.winRatio}}</td>
+              <td>{{x.rank}}</td>
+              <td>{{x["SUM-wins"]}}</td>
+              <td>{{x["SUM-loss"]}}</td>
+              <td>{{x["SUM-tie"]}}</td>
+              <td>{{x["COUNT-totalMatches"]}}</td>
+              <td>{{x["SUM-totalPoints"]}}</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+    <button class="btn btn-primary"  routerLink = "/ShowFeaturedPlayersList" >Check Featured Player List</button>
+  </div><br><br>
+  <!-- <button class="btn btn-success" routerLink = ''>Back to Log In Page</button> -->
+  <div *ngIf = "!logInIndicator" class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 card">
+         <h4 *ngIf = "!logInIndicator" class="card-body">Please LogIn  <button class="btn btn-info" routerLink = ''>Back to LogIn</button></h4>
+        </div>
+        <div class="col-sm-3"></div>
+     </div>
+</div>
+

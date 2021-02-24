@@ -1,0 +1,43 @@
+<div *ngIf = "logInIndicator"  class="container">
+  <div class="col-sm-12">
+    <form  (ngSubmit)="onSubmit(form)" #form="ngForm" class="card-body">
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" 
+        class="form-control" 
+        ngModel
+        required
+        name = "date">
+      </div>
+      <button type="submit" class="btn btn-primary">Get List</button>
+    </form>
+  </div>
+</div>
+<table  *ngIf = "!errorMessage && logInIndicator">
+  <thead>
+    <tr>
+      <th>UserName</th>
+      <th>Win%</th>
+    </tr>
+  </thead>
+    <tbody *ngFor = 'let x of dataOfPlayers'>
+        <tr class="onHover"> 
+          <td>{{x.userName}}</td>
+          <td>{{x.winRatio}}</td>
+        </tr>
+      </tbody>
+</table>
+<div>
+  <div *ngIf = "errorMessage" class="container">
+    <p>{{alertMessage}}</p>
+  </div>
+</div>
+<div *ngIf = "!logInIndicator" class="container">
+  <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6 card">
+       <h4 *ngIf = "!logInIndicator" class="card-body">Please LogIn  <button class="btn btn-info" routerLink = ''>Back to LogIn</button></h4>
+      </div>
+      <div class="col-sm-3"></div>
+   </div>
+</div>

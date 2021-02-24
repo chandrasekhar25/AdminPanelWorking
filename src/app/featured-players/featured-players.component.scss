@@ -1,0 +1,38 @@
+.form-check-input{
+   margin-top: 19px;
+   margin-left: -5px;
+}
+.onHover:active{
+     color: rgb(255, 0, 0);
+     text-decoration: underline;
+}
+.table{
+    border-left: none;
+    border-right: none;
+}
+.main-header{
+    background-color: rgb(141, 19, 255);
+    color: white;
+    text-align: center;
+  }
+  .dropdown-content {
+     display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    cursor: pointer;
+  }
+  button{
+    float:right;
+  }
+.card{
+  z-index: 2;
+  box-shadow: 2px 2px 10px 10px #c5c5c5;
+}
